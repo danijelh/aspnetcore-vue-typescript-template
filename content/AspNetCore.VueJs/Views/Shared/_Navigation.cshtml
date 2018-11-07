@@ -1,0 +1,26 @@
+﻿<nav class="navbar is-white shadow">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item brand-text"
+               href="../">
+                Vue.js Template
+            </a>
+            <div class="navbar-burger burger"
+                 data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="navMenu"
+             class="navbar-menu">
+            <div class="navbar-start">
+                <a asp-controller="Template"
+                   asp-action="Index" class="navbar-item">Template</a>
+                <a asp-controller="IceAndFire"
+                   asp-action="Index" class="navbar-item">Api of Ice and fire</a>
+            </div>
+
+        </div>
+    </div>
+</nav>

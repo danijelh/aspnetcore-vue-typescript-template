@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AspNetCore.Vue.TypeScript.Template</id>
+    <version>0.1.0</version>
+    <description>
+      Template integrating Vue.js with ASP.NET Core MVC application. Features Vue, Vuex, Vue router, Typescript, Bulma and Sass.
+    </description>
+    <tags>template;vue;vuejs;typescript;vuex;</tags>
+    <authors>Danijel Hrček</authors>
+    <projectUrl>https://github.com/danijelh/aspnetcore-vue-typescript-template</projectUrl>
+    <licenseUrl>https://github.com/danijelh/aspnetcore-vue-typescript-template/blob/master/LICENCE.txt</licenseUrl>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>Initial release</releaseNotes>
+  </metadata>
+  <files>
+    <file
+      src="content/**/*"
+      exclude="**/node_modules/**;**/bin/**;**/obj/**;**/.vs/**;**/.vscode/**;**/VueApp/dist/**;**/wwwroot/dist/**;content/Directory.Build.*"
+      target="Content" />
+  </files>
+</package>

@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="VueApp\app\**" />
+    <Content Remove="VueApp\app\**" />
+    <EmbeddedResource Remove="VueApp\app\**" />
+    <None Remove="VueApp\app\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <Target Name="Development" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug'">
+    
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js isnt installed or is not on your path VAR." />
+
+    <Message Condition="!Exists('node_modules')" Text="Installing packages" />
+    <Exec Condition="!Exists('node_modules')" Command="npm install --production false" />
+
+    <Exec Command="npm run build:dev" />
+  </Target>
+
+  <Target Name="Production" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Release'">
+
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js isnt installed or is not on your path VAR." />
+
+    <Message Condition="!Exists('node_modules')" Text="Installing packages" />
+    <Exec Condition="!Exists('node_modules')" Command="npm install --production false" />
+
+    <Exec Command="npm run build:prod" />
+  </Target>
+
+  <ItemGroup>
+    <Folder Include="VueApp\common\components\" />
+    <Folder Include="VueApp\common\config\" />
+    <Folder Include="VueApp\common\design\" />
+    <Folder Include="VueApp\common\services\" />
+    <Folder Include="VueApp\common\types\" />
+    <Folder Include="VueApp\common\utils\" />
+    <Folder Include="VueApp\__tests__\" />
+  </ItemGroup>
+
+</Project>

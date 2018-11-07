@@ -1,0 +1,43 @@
+@import "~bulmaswatch/flatly/bulmaswatch.scss";
+
+@import "vue-multiselect.scss";
+
+/*-------------------------------
+
+    Global
+
+--------------------------------- */
+
+html,
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	width: 90% !important;
+	max-width: 90% !important;
+}
+
+.shadow {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+label.label {
+	font-size: 0.8em;
+}
+
+/*-------------------------------
+
+    Animations and transitions
+
+--------------------------------- */
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+	transition: opacity 0.3s ease;
+}
+
+.component-fade-enter,
+.component-fade-leave-to {
+	opacity: 0;
+}

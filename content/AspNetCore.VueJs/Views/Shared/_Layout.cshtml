@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AspNetCore.Vue.js</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/dist/css/vendor/main.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/dist/css/vendor/main.css" asp-append-version="true" />
+    </environment>
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    @await Html.PartialAsync("_Navigation")
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

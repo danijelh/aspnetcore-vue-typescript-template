@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Danijel Hrček",
+    "classifications": [ "Web", "MVC", "SPA", "Vue", "TypeScript" ],
+    "identity": "AspNetCore.Vue.TypeScript.Template",
+    "name": "ASP.NET Core with Vue, Vuex and TypeScript",
+    "shortName": "vuetypescript",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "primaryOutputs": [
+      {
+        "path": "AspNetCore.VueJs.csproj"
+      }
+    ],
+    "preferNameDirectory" : "true",
+    "sourceName": "AspNetCore.VueJs"
+  }

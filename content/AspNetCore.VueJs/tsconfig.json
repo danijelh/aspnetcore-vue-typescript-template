@@ -1,0 +1,25 @@
+{
+  "include": ["./VueApp/**/*", "vue-shims.d.ts"],
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "sourceMap": false,
+    "module": "esnext",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "types": ["node", "jQuery"],
+    "typeRoots": [
+      "node_modules/@types", "VueApp/common/types"
+    ],
+    "lib": ["es2016", "dom"],
+    "outDir": "JsFiles",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["VueApp/*"]
+    }
+  },
+  "exclude": ["bin", "node_modules"]
+}

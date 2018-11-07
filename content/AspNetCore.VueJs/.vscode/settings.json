@@ -1,0 +1,31 @@
+{
+    "eslint.enable": true,
+
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "vetur.format.defaultFormatter.ts": "vscode-typescript",
+    "vetur.format.defaultFormatterOptions": {
+            "js-beautify-html": {
+                "indent_size": 4,
+                "end_with_newline": false,
+                "wrap_attributes": "force-aligned",
+                "wrap_attributes_indent_size": 4,
+                "editorconfig": true,
+                "js": {
+                    "indent_size": 4,
+                    "indent_with_tabs": true,
+                 }
+            }
+    },
+
+    "prettier.semi": false,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "prettier.singleQuote": true,
+    "prettier.proseWrap": "always",
+
+    "html.format.wrapLineLength": 150,
+    "html.format.maxPreserveNewLines": 1,
+    "html.format.wrapAttributes": "force-aligned",
+
+}

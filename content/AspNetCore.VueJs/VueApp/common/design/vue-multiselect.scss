@@ -1,0 +1,81 @@
+/* -------------------------------
+
+    Vue Multiselect
+
+----------------------------------*/
+
+@import '~vue-multiselect/dist/vue-multiselect.min.css';
+
+.multiselect {
+    min-height: 30px !important;
+}
+
+.multiselect__tags {
+    padding: 2px 40px 0 8px !important;
+}
+
+.multiselect__select {
+    height: 36px !important;
+    padding: 10px 8px !important;
+    line-height: 12px !important;
+}
+
+.multiselect__tags {
+    min-height: 32px !important;
+    padding: 1px 32px 0 8px !important;
+}
+
+.multiselect {
+    font-size: 12px !important;
+}
+
+.multiselect__input,
+.multiselect__single {
+    font-size: 12px !important;
+    padding: 6px 0 0 5px !important;
+    line-height: 14px !important;
+}
+
+.multiselect__tags {
+    min-height: 33px !important;
+}
+
+.multiselect__tag {
+    font-size: 12px;
+    padding: 2px 25px 4px 5px !important;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    margin-right: 2px !important;
+}
+
+.multiselect__tag-icon {
+    line-height: 18px !important;
+}
+
+.multiselect__option {
+    min-height: 30px !important;
+    line-height: 10px !important;
+}
+
+.multiselect__option::after {
+    line-height: 34px !important;
+}
+
+// more setting
+.multiselect__strong {
+    padding-top: 7px !important;
+    line-height: 15px !important;
+}
+
+.multiselect__spinner {
+    height: 30px !important;
+}
+
+.multiselect__placeholder {
+    margin-bottom: 7px;
+    padding-top: 6px;
+}
+
+button.multiselect-expand {
+    font-size: 9px;
+}
