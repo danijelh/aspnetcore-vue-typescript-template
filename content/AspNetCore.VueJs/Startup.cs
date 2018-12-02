@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,7 +18,8 @@ namespace AspNetCore.VueJs
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
-
+            
+            services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
             services.AddMvc();
         }
 
@@ -33,11 +35,12 @@ namespace AspNetCore.VueJs
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Template}/{action=Index}/{id?}");
-
+                    name: "spa-route",
+                    template: "{controller}/{*anything=Index}",
+                    defaults: new { action = "Index" });
+                
                 routes.MapRoute(
-                   name: "spa-fallback",
+                   name: "app-fallback",
                    template: "{*anything}/",
                    defaults: new { controller = "Template", action = "Index" });
             });

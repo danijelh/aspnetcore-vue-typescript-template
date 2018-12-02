@@ -28,6 +28,7 @@ module.exports = function (env, argv) {
         entry: {
             template: path.resolve(__dirname, applicationBasePath + "/template/app.ts"),
             iceandfire: path.resolve(__dirname, applicationBasePath + "/iceandfire/app.ts"),
+            idontneedtypescript: path.resolve(__dirname, applicationBasePath + "/idontneedtypescript/app.js"),
             vendor: [
 
                 path.resolve(__dirname, "VueApp/common/design/site.scss"),

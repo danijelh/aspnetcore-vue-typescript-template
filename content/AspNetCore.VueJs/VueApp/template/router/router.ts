@@ -1,9 +1,11 @@
 import VueRouter from 'vue-router'
 
 // Pages
-import VueX from '@/template/views/VueX.vue'
+import Vuex from '@/template/views/Vuex.vue'
 import TemplateInfo from '@/template/views/TemplateInfo.vue'
 import ThirdPartyLibraries from '@/template/views/ThirdPartyLibraries.vue'
+
+const routePrefix = 'template'
 
 const routes = [
 	{
@@ -12,17 +14,17 @@ const routes = [
 	},
 	{
 		name: 'templateInfo',
-		path: '/template',
+		path: `/${routePrefix}/info`,
 		component: TemplateInfo
 	},
 	{
 		name: 'vuex',
-		path: '/vuex',
-		component: VueX
+		path: `/${routePrefix}/vuex`,
+		component: Vuex
 	},
 	{
 		name: 'thirdpartylibraries',
-		path: '/thirdpartylibraries',
+		path: `/${routePrefix}/thirdpartylibraries`,
 		component: ThirdPartyLibraries
 	}
 ]

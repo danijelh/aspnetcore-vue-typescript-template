@@ -11,7 +11,10 @@
                     <a href="https://vuejs.org/" target="_blank">Vue</a>
                 </li>
                 <li>
-                    <a href="https://vuex.vuejs.org/" target="_blank">VueX</a>
+                    <a href="https://router.vuejs.org/" target="_blank">Vue router</a>
+                </li>
+                <li>
+                    <a href="https://vuex.vuejs.org/" target="_blank">Vuex</a>
                 </li>
                 <li>
                     <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
@@ -21,6 +24,9 @@
                 </li>
                 <li>
                     <a href="https://sass-lang.com/" target="_blank">Sass</a>
+                </li>
+                <li>
+                    <a href="https://jestjs.io/" target="_blank">Jest</a>
                 </li>
                 <li>
                     <a href="https://webpack.js.org/" target="_blank">Webpack 4</a>

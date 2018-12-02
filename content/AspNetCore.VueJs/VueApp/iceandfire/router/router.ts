@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 // Pages
 import Characters from '@/iceandfire/views/Characters.vue'
 
+const routePrefix = 'iceandfire'
+
 const routes = [
 	{
 		path: '*',
@@ -10,7 +12,7 @@ const routes = [
 	},
 	{
 		name: 'characters',
-		path: '/',
+		path: `/${routePrefix}`,
 		component: Characters
 	}
 ]

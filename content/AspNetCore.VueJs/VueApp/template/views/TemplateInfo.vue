@@ -5,7 +5,7 @@
                 {{ pageTitle }}
             </h1>
             <h2 class="subtitle">
-                Template is created using Vue, Vuex, Vue router, Typescript and Bulma.
+                Template is created using Vue, Vue router, Vuex, TypeScript and Bulma.
             </h2>
             <template-info-about></template-info-about>
             <template-info-stack></template-info-stack>

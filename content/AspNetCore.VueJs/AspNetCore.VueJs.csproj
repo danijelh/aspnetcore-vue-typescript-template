@@ -58,4 +58,10 @@
     <Folder Include="VueApp\__tests__\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\IDontLikeTypeScript\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

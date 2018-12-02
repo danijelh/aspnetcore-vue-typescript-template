@@ -1,6 +1,6 @@
-# ASP.NET Core Vue.js with TypeScript template
+# ASP.NET Core 2.1 multi-page Vue.js with TypeScript template
 
-The repository contains template using Vue.js, Vuex, TypeScript and Bulma. It integrates Vue into AspNetCore MVC and showcases how to use Vue with .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
+The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bulma, SASS and Jest. It integrates Vue into AspNetCore MVC and showcases how to use Vue with it's entire ecosystem in .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
 
 ---
 
@@ -15,7 +15,11 @@ The repository contains template using Vue.js, Vuex, TypeScript and Bulma. It in
 
 ## Nuget
 
-- [Nuget package](https://www.nuget.org/packages/AspNetCore.Vue.TypeScript.Template)
+- [AspNetCore.Vue.TypeScript.Template](https://www.nuget.org/packages/AspNetCore.Vue.TypeScript.Template)
+
+| Version | Downloads |
+| :---: | :---: |
+| [![NuGet](https://img.shields.io/nuget/v/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) | [![Nuget](https://img.shields.io/nuget/dt/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) |
 
 ## Table of Contents
 
@@ -35,6 +39,7 @@ The repository contains template using Vue.js, Vuex, TypeScript and Bulma. It in
 - **TypeScript**
 - **Bulma**
 - **Sass**
+- **Jest**
 - **Webpack 4**
 
 ## Prerequisites
@@ -46,9 +51,9 @@ The repository contains template using Vue.js, Vuex, TypeScript and Bulma. It in
 
 In order to create a new project from this template, you must first install it.
 
-- Install the template from nuget by running the following command:
+Install the template from NuGet by running the following command:
 
-```console
+```
 dotnet new -i AspNetCore.Vue.TypeScript.Template
 ```
 
@@ -60,7 +65,7 @@ To create a new project run `dotnet new vuetypescript` command and provide the n
 
 Example
 
-```console
+```
 dotnet new vuetypescript --name TestProject.Web
 ```
 

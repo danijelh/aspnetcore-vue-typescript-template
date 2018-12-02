@@ -5,7 +5,7 @@
                 Vuex store
             </h1>
             <h2 class="subtitle">
-                Example on using Vuex store with TypeScript.
+                Example on using Vuex without TypeScript.
             </h2>
         </div>
         <br>
@@ -42,29 +42,24 @@
     </div>
 </template>
 
-<script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-
+<script>
 import { mapGetters } from 'vuex'
 
-@Component({
-    name: 'Vuex',
+export default {
+    name: 'Counter',
     computed: {
-        ...mapGetters('vuexPageModule', [
+        ...mapGetters('counterModule', [
             'count'
-        ]),
-    }
-})
-export default class Vuex extends Vue {
-
-    addCount(): void {
-        this.$store.dispatch('vuexPageModule/increaseCount')
-    }
-
-    reset(): void {
-        this.$store.dispatch('vuexPageModule/resetCount')
-    }
-
+        ])
+    },
+    methods: {
+        addCount() {
+            this.$store.dispatch('counterModule/increaseCount')
+        },
+        reset () {
+            this.$store.dispatch('counterModule/resetCount')
+        }
+    },
 }
 </script>
 
