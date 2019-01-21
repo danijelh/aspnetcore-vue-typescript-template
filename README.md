@@ -1,4 +1,4 @@
-# ASP.NET Core 2.1 multi-page Vue.js with TypeScript template
+# ASP.NET Core 2.2 multi-page Vue.js with TypeScript template
 
 The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bulma, SASS and Jest. It integrates Vue into AspNetCore MVC and showcases how to use Vue with it's entire ecosystem in .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
 
@@ -15,11 +15,9 @@ The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bul
 
 ## Nuget
 
-- [AspNetCore.Vue.TypeScript.Template](https://www.nuget.org/packages/AspNetCore.Vue.TypeScript.Template)
-
-| Version | Downloads |
-| :---: | :---: |
-| [![NuGet](https://img.shields.io/nuget/v/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) | [![Nuget](https://img.shields.io/nuget/dt/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) |
+| NuGet | Version | Downloads |
+| :---: | :---:   | :---:     |
+| [AspNetCore.Vue.TypeScript.Template](https://www.nuget.org/packages/AspNetCore.Vue.TypeScript.Template) | [![NuGet](https://img.shields.io/nuget/v/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) | [![Nuget](https://img.shields.io/nuget/dt/AspNetCore.Vue.TypeScript.Template.svg)](https://nuget.org/packages/AspNetCore.Vue.TypeScript.Template) |
 
 ## Table of Contents
 
@@ -33,7 +31,7 @@ The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bul
 
 ## Features
 
-- **ASP NET Core 2.1**
+- **ASP NET Core 2.2**
 - **Vue.js**
 - **Vuex**
 - **TypeScript**
@@ -44,7 +42,7 @@ The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bul
 
 ## Prerequisites
 
-- [.Net Core 2.1 SDK](https://www.microsoft.com/net/download/windows)
+- [.Net Core 2.2 SDK](https://www.microsoft.com/net/download/windows)
 - [NodeJS](https://nodejs.org/)
 
 ## Installation

@@ -7,6 +7,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Custom variables
 let isProduction = false;
@@ -86,8 +87,7 @@ module.exports = function (env, argv) {
                     use: extractSassPlugin.extract({
                         use: [
                             {
-                                loader: "css-loader",
-                                options: { minimize: isProduction, sourceMap: true }
+                                loader: "css-loader"
                             },
                             {
                                 loader: "resolve-url-loader"
@@ -125,6 +125,14 @@ module.exports = function (env, argv) {
         plugins: [
             new CleanWebpackPlugin("wwwroot/dist", {}),
             extractSassPlugin,
+            new OptimizeCssAssetsPlugin({
+                assetNameRegExp: /\.css$/g,
+                cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', { discardComments: { removeAll: true } }],
+                },
+                canPrint: true
+            }),
             new VueLoaderPlugin(),
             new webpack.DefinePlugin({
                 "process.env": {

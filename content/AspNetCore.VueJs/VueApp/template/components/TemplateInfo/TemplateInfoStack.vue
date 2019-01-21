@@ -5,7 +5,7 @@
             <h2>Stack</h2>
             <ul>
                 <li>
-                    <a href="https://www.microsoft.com/net" target="_blank">ASP.NET Core 2.1</a>
+                    <a href="https://www.microsoft.com/net" target="_blank">ASP.NET Core 2.2</a>
                 </li>
                 <li>
                     <a href="https://vuejs.org/" target="_blank">Vue</a>
