@@ -2,6 +2,10 @@
 
 The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bulma, SASS and Jest. It integrates Vue into AspNetCore MVC and showcases how to use Vue with it's entire ecosystem in .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
 
+> **No TypeScript**: Template completely supports usage without TypeScript. You can use plain js if you don't have the need for or don't want to use TypeScript.
+
+**Medium:** [Multi-page .NET Core with Vue.js, TypeScript, Vuex, Vue router, Bulma, Sass, Jest and Webpack 4](https://medium.com/@danijelhdev/multi-page-net-core-with-vue-js-typescript-vuex-vue-router-bulma-sass-and-webpack-4-efc7de83fea4)
+
 ---
 
 <p style="text-align:center">

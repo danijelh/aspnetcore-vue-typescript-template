@@ -1,5 +1,6 @@
 "use strict";
 
+const fs = require('fs')
 const path = require("path");
 const webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
@@ -11,13 +12,35 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Custom variables
 let isProduction = false;
-const applicationBasePath = "VueApp";
+const applicationBasePath = "./VueApp/";
 
 // Plugins
 const extractSassPlugin = new ExtractTextPlugin({
     filename: "css/[name]/main.css",
     allChunks: true
 });
+
+// We search for app.js or app.ts files inside VueApp/{miniSpaName} folder and make those as entries. Convention over configuration
+var appEntryFiles = {}
+fs.readdirSync(applicationBasePath).forEach(function (name) {
+
+    let spaEntryPoint = applicationBasePath + name + '/app.ts'
+
+    if (fs.existsSync(spaEntryPoint)) {
+      appEntryFiles[name] = spaEntryPoint
+    }
+
+    spaEntryPoint = applicationBasePath + name + '/app.js'
+    if (fs.existsSync(spaEntryPoint)) {
+      appEntryFiles[name] = spaEntryPoint
+    }
+
+})
+
+// Add main site.scss file with Bulma(or any other source by choice)
+appEntryFiles["vendor"] = [
+  path.resolve(__dirname, "VueApp/common/design/site.scss"),
+]
 
 module.exports = function (env, argv) {
 
@@ -26,16 +49,7 @@ module.exports = function (env, argv) {
     }
 
     return {
-        entry: {
-            template: path.resolve(__dirname, applicationBasePath + "/template/app.ts"),
-            iceandfire: path.resolve(__dirname, applicationBasePath + "/iceandfire/app.ts"),
-            idontneedtypescript: path.resolve(__dirname, applicationBasePath + "/idontneedtypescript/app.js"),
-            vendor: [
-
-                path.resolve(__dirname, "VueApp/common/design/site.scss"),
-
-            ]
-        },
+        entry: appEntryFiles,
         output: {
             path: path.resolve(__dirname, "wwwroot/dist"),
             filename: "js/[name]/bundle.js",
@@ -46,7 +60,7 @@ module.exports = function (env, argv) {
             extensions: [".ts", ".js", ".vue", ".json", "scss", "css"],
             alias: {
                 vue$: "vue/dist/vue.esm.js",
-                "@": path.join(__dirname, "./" + applicationBasePath + "/")
+                "@": path.join(__dirname, applicationBasePath)
             }
         },
         devtool: "source-map",
@@ -57,6 +71,7 @@ module.exports = function (env, argv) {
         },
         module: {
             rules: [
+                /* config.module.rule('vue') */
                 {
                     test: /\.vue$/,
                     loader: "vue-loader",
@@ -68,12 +83,14 @@ module.exports = function (env, argv) {
                         }
                     }
                 },
+                /* config.module.rule('js') */
                 {
                     test: /\.js$/,
                     exclude: /(node_modules|bower_components)/,
                     loader: "babel-loader",
                     exclude: /node_modules/,
                 },
+                /* config.module.rule('ts') */
                 {
                     test: /\.ts$/,
                     loader: "ts-loader",
@@ -82,6 +99,7 @@ module.exports = function (env, argv) {
                         transpileOnly: true
                     }
                 },
+                /* config.module.rule('sass') */
                 {
                     test: /\.scss$/,
                     use: extractSassPlugin.extract({
@@ -103,22 +121,76 @@ module.exports = function (env, argv) {
                         fallback: "style-loader"
                     })
                 },
+                /* config.module.rule('css') */
                 {
                     test: /\.css$/,
                     loader: "css-loader"
                 },
+                /* config.module.rule('images') */
                 {
-                    test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                    use: [
-                        {
-                            loader: "file-loader",
-                            options: {
-                                name: "[name].[ext]",
-                                outputPath: "css/",
-                                publicPath: "/dist/"
-                            }
+                  test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
+                  use: [
+                    {
+                      loader: 'url-loader',
+                      options: {
+                        limit: 4096,
+                        fallback: {
+                          loader: 'file-loader',
+                          options: {
+                            name: 'img/[name].[hash:8].[ext]'
+                          }
                         }
-                    ]
+                      }
+                    }
+                  ]
+                },
+                /* config.module.rule('svg') */
+                {
+                  test: /\.(svg)(\?.*)?$/,
+                  use: [
+                    {
+                      loader: 'file-loader',
+                      options: {
+                        name: 'img/[name].[hash:8].[ext]'
+                      }
+                    }
+                  ]
+                },
+                /* config.module.rule('media') */
+                {
+                  test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                  use: [
+                    {
+                      loader: 'url-loader',
+                      options: {
+                        limit: 4096,
+                        fallback: {
+                          loader: 'file-loader',
+                          options: {
+                            name: 'media/[name].[hash:8].[ext]'
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                /* config.module.rule('fonts') */
+                {
+                  test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+                  use: [
+                    {
+                      loader: 'url-loader',
+                      options: {
+                        limit: 4096,
+                        fallback: {
+                          loader: 'file-loader',
+                          options: {
+                            name: 'fonts/[name].[hash:8].[ext]'
+                          }
+                        }
+                      }
+                    }
+                  ]
                 }
             ]
         },

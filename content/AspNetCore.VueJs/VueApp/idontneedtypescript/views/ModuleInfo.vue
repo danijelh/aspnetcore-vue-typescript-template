@@ -25,9 +25,6 @@
                     Rename all <strong>.ts</strong> files to <strong>.js</strong> and remove types from code.
                 </li>
                 <li>
-                    In <strong>webpack.config.js</strong> import <strong>.js</strong> entry files
-                </li>
-                <li>
                     In <strong>webpack.config.js</strong> remove <strong>ts-loader</strong> and remove <strong>".ts"</strong> extension
                 </li>
             </ul>
