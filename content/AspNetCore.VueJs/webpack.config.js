@@ -195,7 +195,10 @@ module.exports = function (env, argv) {
             ]
         },
         plugins: [
-            new CleanWebpackPlugin("wwwroot/dist", {}),
+            new CleanWebpackPlugin({
+              verbose: true,
+              cleanOnceBeforeBuildPatterns: ["wwwroot/dist"],
+            }),
             extractSassPlugin,
             new OptimizeCssAssetsPlugin({
                 assetNameRegExp: /\.css$/g,

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>AspNetCore.Vue.TypeScript.Template</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>
       Template integrating Vue.js with ASP.NET Core MVC application. Features Vue, Vuex, Vue router, TypeScript, Bulma, Sass, Jest and Webpack 4.
     </description>
@@ -14,7 +14,7 @@
       <packageType name="Template" />
     </packageTypes>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>1.0.0 release.</releaseNotes>
+    <releaseNotes>1.0.1 release.</releaseNotes>
   </metadata>
   <files>
     <file
