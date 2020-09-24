@@ -1,6 +1,6 @@
-# ASP.NET Core 2.2 multi-page Vue.js with TypeScript template
+# ASP.NET Core 3.1 multi-page Vue.js with TypeScript template
 
-The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bulma, SASS and Jest. It integrates Vue into AspNetCore MVC and showcases how to use Vue with it's entire ecosystem in .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
+The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bulma and SASS. It integrates Vue into AspNetCore MVC and showcases how to use Vue with it's entire ecosystem in .NET as a multipage (multiple mini SPA's) application. The template can also be used as a complete single page application but you should consider using [Vue cli](https://cli.vuejs.org/) for this as it is a more flexible and advanced solution.
 
 > **No TypeScript**: Template completely supports usage without TypeScript. You can use plain js if you don't have the need for or don't want to use TypeScript.
 
@@ -35,18 +35,17 @@ The repository contains template using Vue.js, Vuex, Vue router, TypeScript, Bul
 
 ## Features
 
-- **ASP NET Core 2.2**
+- **ASP NET Core 3.1**
 - **Vue.js**
 - **Vuex**
 - **TypeScript**
 - **Bulma**
 - **Sass**
-- **Jest**
 - **Webpack 4**
 
 ## Prerequisites
 
-- [.Net Core 2.2 SDK](https://www.microsoft.com/net/download/windows)
+- [.Net Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 - [NodeJS](https://nodejs.org/)
 
 ## Installation
@@ -84,7 +83,7 @@ Template features the following commands
 - `npm run dev` - Builds front end in development mode and watches for any changes made to the files.
 - `npm run build:dev` - Builds front end in development mode.
 - `npm run build:prod` - Builds front end in production mode.
-- `npm run test` - Runs tests under __tests__ folder and generates code coverage report.
+- `npm run test` - ~~Runs tests under __tests__ folder and generates code coverage report.~~ Tests are removed to make config and packages simple.
 - `npm run publish` - Builds production optimized front-end packages and publishes the application in release mode.
 
 ## Licence

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace AspNetCore.VueJs
 {
@@ -23,7 +24,7 @@ namespace AspNetCore.VueJs
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -32,16 +33,18 @@ namespace AspNetCore.VueJs
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "spa-route",
-                    template: "{controller}/{*anything=Index}",
+                    pattern: "{controller}/{*anything=Index}",
                     defaults: new { action = "Index" });
-                
-                routes.MapRoute(
+
+                endpoints.MapControllerRoute(
                    name: "app-fallback",
-                   template: "{*anything}/",
+                   pattern: "{*anything}/",
                    defaults: new { controller = "Template", action = "Index" });
             });
         }

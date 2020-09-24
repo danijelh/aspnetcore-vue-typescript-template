@@ -2,19 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>AspNetCore.Vue.TypeScript.Template</id>
-    <version>1.0.1</version>
+    <version>2.0.0</version>
     <description>
-      Template integrating Vue.js with ASP.NET Core MVC application. Features Vue, Vuex, Vue router, TypeScript, Bulma, Sass, Jest and Webpack 4.
+      Template integrating Vue.js with ASP.NET Core MVC application. Features Vue, Vuex, Vue router, TypeScript, Bulma, Sass and Webpack 4.
     </description>
     <tags>template;vue;vuejs;typescript;vuex;</tags>
     <authors>Danijel Hrček</authors>
     <projectUrl>https://github.com/danijelh/aspnetcore-vue-typescript-template</projectUrl>
-    <licenseUrl>https://github.com/danijelh/aspnetcore-vue-typescript-template/blob/master/LICENCE.txt</licenseUrl>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>1.0.1 release.</releaseNotes>
+    <releaseNotes>2.0.0 release.Upgrade to NET Core 3.x</releaseNotes>
   </metadata>
   <files>
     <file

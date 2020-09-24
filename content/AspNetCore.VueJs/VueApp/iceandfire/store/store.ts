@@ -1,10 +1,13 @@
+import 'es6-promise/auto'
+
 import Vue from 'vue'
 import Vuex, { StoreOptions } from 'vuex'
 import { GetterTree } from 'vuex'
 import { ActionTree } from 'vuex'
 import { MutationTree } from 'vuex'
 import { RootState } from './state'
-import { CharacterResponse } from '@/iceandfire/types/models/character'
+// import { CharacterResponse } from '@/iceandfire/types/models/character'
+import { CharacterResponse } from '../types/models/character'
 
 import axios from 'axios'
 
