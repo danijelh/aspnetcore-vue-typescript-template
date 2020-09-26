@@ -25,6 +25,9 @@
                                 <li>
                                     <router-link :to="{ name: 'templateInfo' }">Template</router-link>
                                 </li>
+                                <li>
+                                    <router-link :to="{ name: 'compositionApi' }">Composition API</router-link>
+                                </li>
                             </ul>
                         </aside>
                     </section>

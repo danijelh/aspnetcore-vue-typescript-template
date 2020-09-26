@@ -2,7 +2,7 @@
     <div>
         <div class="container">
             <h1 class="title">
-                {{ pageTile }}
+                {{ pageTitle }}
             </h1>
             <h2 class="subtitle">
                 And that's fine, don't use it.
@@ -39,7 +39,7 @@
     export default {
         data() {
             return {
-                pageTile: 'I don\'t need TypeScript'
+                pageTitle: 'I don\'t need TypeScript'
             }
         }
     }
