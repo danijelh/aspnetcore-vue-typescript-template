@@ -1,18 +1,33 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
+﻿var builder = WebApplication.CreateBuilder(args);
 
-namespace AspNetCore.VueJs
+// Add services to the container.
+builder.Services.AddHttpClient();
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+builder.Services.AddControllersWithViews();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            BuildWebHost(args).Run();
-        }
-
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-    }
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "spa-route",
+        pattern: "{controller}/{*anything=Index}",
+        defaults: new { action = "Index" });
+
+    endpoints.MapControllerRoute(
+       name: "app-fallback",
+       pattern: "{*anything}/",
+       defaults: new { controller = "Template", action = "Index" });
+});
+
+app.Run();
